@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Music Player App</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- SONG STATE -->
+<input type="radio" name="song" id="s1" checked>
+<input type="radio" name="song" id="s2">
+<input type="radio" name="song" id="s3">
+
+<!-- PLAYER STATE -->
+<input type="radio" name="control" id="play">
+<input type="radio" name="control" id="pause" checked>
+<input type="radio" name="control" id="stop">
+
+<!-- FAVORITE -->
+<input type="checkbox" id="fav">
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>Library</h2>
+        <label for="s1">🎵 Song One</label>
+        <label for="s2">🎵 Song Two</label>
+        <label for="s3">🎵 Song Three</label>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <div class="album"></div>
+
+        <h1 class="title"></h1>
+        <p class="artist"></p>
+
+        <!-- FAVORITE -->
+        <label for="fav" class="fav">♡</label>
+
+        <!-- PROGRESS -->
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <!-- CONTROLS -->
+        <div class="controls">
+            <label for="s3">⏮</label>
+            <label for="play">▶</label>
+            <label for="pause">⏸</label>
+            <label for="stop">⏹</label>
+            <label for="s2">⏭</label>
+        </div>
+
+    </main>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    height: 100vh;
+    background: #0f2027;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+input {
+    display: none;
+}
+
+/* APP */
+.app {
+    width: 90vw;
+    height: 90vh;
+    background: #111;
+    border-radius: 20px;
+    display: flex;
+    overflow: hidden;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    background: #181818;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.sidebar label {
+    display: block;
+    padding: 12px;
+    margin-bottom: 10px;
+    background: #222;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.sidebar label:hover {
+    background: #ff4d6d;
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    background: linear-gradient(#222,#111);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ALBUM */
+.album {
+    width: 320px;
+    height: 320px;
+    border-radius: 20px;
+    background-size: cover;
+    margin-bottom: 15px;
+}
+
+/* SONG STATES */
+#s1:checked ~ .app .album { background-image: url("https://picsum.photos/400?1"); }
+#s1:checked ~ .app .title::after { content: "Song One"; }
+#s1:checked ~ .app .artist::after { content: "Artist One"; }
+
+#s2:checked ~ .app .album { background-image: url("https://picsum.photos/400?2"); }
+#s2:checked ~ .app .title::after { content: "Song Two"; }
+#s2:checked ~ .app .artist::after { content: "Artist Two"; }
+
+#s3:checked ~ .app .album { background-image: url("https://picsum.photos/400?3"); }
+#s3:checked ~ .app .title::after { content: "Song Three"; }
+#s3:checked ~ .app .artist::after { content: "Artist Three"; }
+
+/* PLAY */
+#play:checked ~ .app .album {
+    animation: spin 6s linear infinite;
+}
+
+/* STOP */
+#stop:checked ~ .app .album {
+    animation: none;
+}
+
+/* FAVORITE */
+.fav {
+    font-size: 26px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+#fav:checked ~ .app .fav::after {
+    content: "❤️";
+}
+.fav::after {
+    content: "♡";
+}
+
+/* PROGRESS */
+.progress-bar {
+    width: 60%;
+    height: 6px;
+    background: #333;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.progress {
+    width: 40%;
+    height: 100%;
+    background: #ff4d6d;
+}
+
+/* CONTROLS */
+.controls label {
+    background: #222;
+    padding: 16px;
+    margin: 0 10px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.controls label:hover {
+    background: #ff4d6d;
+}
+
+/* ANIMATION */
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
